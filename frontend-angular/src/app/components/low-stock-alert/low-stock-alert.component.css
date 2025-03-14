@@ -1,0 +1,312 @@
+/* Low Stock Alerts Component Styles */
+.low-stock-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+  }
+  
+  .low-stock-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  h2 {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+  
+  .threshold-control {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+  
+  .threshold-control label {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    margin: 0;
+  }
+  
+  .threshold-control input {
+    width: 100px;
+    padding: 10px 14px;
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    background-color: #ffffff;
+    transition: all 0.2s ease;
+  }
+  
+  .threshold-control input:focus {
+    outline: none;
+    border-color: #5746e9;
+    box-shadow: 0 0 0 3px rgba(87, 70, 233, 0.15);
+  }
+  
+  .alert-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    padding: 16px;
+    border-radius: 6px;
+    margin-bottom: 24px;
+  }
+  
+  .alert-icon {
+    color: #ef4444;
+    flex-shrink: 0;
+  }
+  
+  .alert-text {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    color: #991b1b;
+    margin: 0;
+  }
+  
+  .alert-count {
+    font-weight: 600;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 24px;
+  }
+  
+  thead {
+    background-color: #f9fafb;
+  }
+  
+  th {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #4b5563;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  th:first-child {
+    border-top-left-radius: 8px;
+  }
+  
+  th:last-child {
+    border-top-right-radius: 8px;
+  }
+  
+  td {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    color: #111827;
+    padding: 16px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+  
+  tr:last-child td:first-child {
+    border-bottom-left-radius: 8px;
+  }
+  
+  tr:last-child td:last-child {
+    border-bottom-right-radius: 8px;
+  }
+  
+  tr:hover {
+    background-color: #f9fafb;
+  }
+  
+  .quantity-column {
+    text-align: center;
+    font-weight: 600;
+    color: #ef4444;
+  }
+  
+  .price-column {
+    text-align: right;
+  }
+  
+  .truncate {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  .empty-icon {
+    width: 64px;
+    height: 64px;
+    color: #9ca3af;
+    margin-bottom: 16px;
+  }
+  
+  .empty-text {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0;
+  }
+  
+  .empty-subtext {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    color: #9ca3af;
+    margin: 8px 0 0 0;
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .low-stock-container {
+      background-color: #1f2937;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .low-stock-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    h2 {
+      color: #f3f4f6;
+    }
+    
+    .threshold-control {
+      background-color: #111827;
+      border: 1px solid #374151;
+    }
+    
+    .threshold-control label {
+      color: #9ca3af;
+    }
+    
+    .threshold-control input {
+      border: 1px solid #374151;
+      background-color: #1f2937;
+      color: #f3f4f6;
+    }
+    
+    .threshold-control input:focus {
+      border-color: #818cf8;
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+    }
+    
+    .alert-banner {
+      background-color: #481a1a;
+      border-left: 4px solid #f87171;
+    }
+    
+    .alert-icon {
+      color: #f87171;
+    }
+    
+    .alert-text {
+      color: #fca5a5;
+    }
+    
+    thead {
+      background-color: #111827;
+    }
+    
+    th {
+      color: #9ca3af;
+      border-bottom: 1px solid #374151;
+    }
+    
+    td {
+      color: #f3f4f6;
+      border-bottom: 1px solid #374151;
+    }
+    
+    tr:hover {
+      background-color: #283548;
+    }
+    
+    .quantity-column {
+      color: #f87171;
+    }
+    
+    .empty-state {
+      background-color: #111827;
+    }
+    
+    .empty-icon {
+      color: #6b7280;
+    }
+    
+    .empty-text {
+      color: #9ca3af;
+    }
+    
+    .empty-subtext {
+      color: #6b7280;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .product-description {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .low-stock-container {
+      border-radius: 0;
+      box-shadow: none;
+      padding: 16px;
+    }
+    
+    table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+    
+    .product-category, .product-supplier {
+      display: none;
+    }
+    
+    td, th {
+      padding: 12px;
+    }
+    
+    .threshold-control {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+  }

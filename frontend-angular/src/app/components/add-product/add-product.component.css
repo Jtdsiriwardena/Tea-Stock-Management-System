@@ -1,0 +1,177 @@
+/* Add Product Component Styles */
+.add-product-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  h2 {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  
+  /* Full-width fields */
+  form div:nth-child(2) {
+    grid-column: 1 / span 2;
+  }
+  
+  form div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 8px;
+  }
+  
+  input, textarea {
+    padding: 12px 16px;
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 15px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #f9fafb;
+    transition: all 0.2s ease;
+  }
+  
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #5746e9;
+    box-shadow: 0 0 0 3px rgba(87, 70, 233, 0.15);
+    background-color: #ffffff;
+  }
+  
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .button-group {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 12px 24px;
+    font-family: 'Inter', 'SF Pro Display', -apple-system, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  button[type="submit"] {
+    background-color: #5746e9;
+    color: white;
+    border: none;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #4a3ad1;
+    transform: translateY(-1px);
+  }
+  
+  button[type="button"] {
+    background-color: transparent;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+  }
+  
+  button[type="button"]:hover {
+    background-color: #f9fafb;
+    border-color: #d1d5db;
+  }
+  
+  /* Validation styles */
+  input:invalid, textarea:invalid {
+    border-color: #000000;
+  }
+  
+  input:invalid:focus, textarea:invalid:focus {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+  }
+  
+  /* Dark mode support */
+  @media (prefers-color-scheme: dark) {
+    .add-product-container {
+      background-color: #1f2937;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    h2 {
+      color: #f3f4f6;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    
+    label {
+      color: #9ca3af;
+    }
+    
+    input, textarea {
+      border: 1px solid #374151;
+      background-color: #111827;
+      color: #f3f4f6;
+    }
+    
+    input:focus, textarea:focus {
+      border-color: #818cf8;
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+      background-color: #1f2937;
+    }
+    
+    button[type="submit"] {
+      background-color: #818cf8;
+    }
+    
+    button[type="submit"]:hover {
+      background-color: #6366f1;
+    }
+    
+    button[type="button"] {
+      color: #d1d5db;
+      border: 1px solid #374151;
+    }
+    
+    button[type="button"]:hover {
+      background-color: #374151;
+      border-color: #4b5563;
+    }
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 640px) {
+    form {
+      grid-template-columns: 1fr;
+    }
+    
+    form div:nth-child(2) {
+      grid-column: 1;
+    }
+    
+    .button-group {
+      grid-column: 1;
+    }
+  }

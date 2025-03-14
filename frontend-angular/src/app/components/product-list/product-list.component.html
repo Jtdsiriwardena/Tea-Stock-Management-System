@@ -1,0 +1,62 @@
+<div class="product-list-container">
+  <div class="product-list-header">
+    <h2>Product List</h2>
+    <div class="product-list-actions">
+      <a routerLink="/add-product" class="btn btn-primary">
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="12" y1="5" x2="12" y2="19"></line>
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+        </svg>
+        Add Product
+      </a>
+      <a routerLink="/low-stock" class="btn btn-secondary">
+        <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+          <line x1="12" y1="9" x2="12" y2="13"></line>
+          <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+        Low Stock Alerts
+      </a>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th class="product-description">Description</th>
+        <th class="product-category">Category</th>
+        <th class="price-column">Price</th>
+        <th class="quantity-column">Quantity</th>
+        <th class="product-supplier">Supplier</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td class="product-description">
+          <div class="truncate">{{ product.description }}</div>
+        </td>
+        <td class="product-category">{{ product.category }}</td>
+        <td class="price-column">{{ product.price | currency }}</td>
+        <td class="quantity-column" [ngClass]="{'quantity-low': product.quantityInStock < 10}">
+          {{ product.quantityInStock }}
+        </td>
+        <td class="product-supplier">{{ product.supplier }}</td>
+        <td>
+          <div class="product-actions">
+            <button class="btn btn-secondary" [routerLink]="['/edit-product', product.id]">
+              Edit
+            </button>
+            <button class="btn btn-danger" (click)="deleteProduct(product.id)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

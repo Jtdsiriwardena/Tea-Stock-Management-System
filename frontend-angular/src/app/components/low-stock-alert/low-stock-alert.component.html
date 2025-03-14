@@ -1,0 +1,64 @@
+<div class="low-stock-container">
+  <div class="low-stock-header">
+    <h2>Low Stock Alerts</h2>
+  </div>
+
+  <div class="threshold-control">
+    <label for="threshold">Set Low Stock Threshold:</label>
+    <input
+      type="number"
+      id="threshold"
+      [(ngModel)]="threshold"
+      (change)="onThresholdChange()"
+      min="1"
+    />
+  </div>
+
+  <div class="alert-banner" *ngIf="lowStockProducts.length > 0">
+    <svg class="alert-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+      <line x1="12" y1="9" x2="12" y2="13"></line>
+      <line x1="12" y1="17" x2="12.01" y2="17"></line>
+    </svg>
+    <p class="alert-text">
+      <span class="alert-count">{{ lowStockProducts.length }}</span> products are below the threshold of <span class="alert-count">{{ threshold }}</span> units.
+    </p>
+  </div>
+
+  <table *ngIf="lowStockProducts.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th class="product-description">Description</th>
+        <th class="product-category">Category</th>
+        <th class="price-column">Price</th>
+        <th class="quantity-column">Quantity</th>
+        <th class="product-supplier">Supplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of lowStockProducts">
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td class="product-description">
+          <div class="truncate">{{ product.description }}</div>
+        </td>
+        <td class="product-category">{{ product.category }}</td>
+        <td class="price-column">{{ product.price | currency }}</td>
+        <td class="quantity-column">{{ product.quantityInStock }}</td>
+        <td class="product-supplier">{{ product.supplier }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="empty-state" *ngIf="lowStockProducts.length === 0">
+    <svg class="empty-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M12 8v4"></path>
+      <path d="M12 16h.01"></path>
+    </svg>
+    <p class="empty-text">No low stock products found.</p>
+    <p class="empty-subtext">Try adjusting the threshold value.</p>
+  </div>
+</div>
